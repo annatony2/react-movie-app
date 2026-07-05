@@ -1,0 +1,59 @@
+/* ---------------------------------------------------
+   Global resets & design tokens (CSS custom properties)
+   Theme: "Marquee" — cinema ticket / movie-house aesthetic
+--------------------------------------------------- */
+:root {
+  /* Color palette */
+  --color-bg: #14141a;          /* deep charcoal - theatre darkness */
+  --color-bg-elevated: #1e1e27; /* card / surface background */
+  --color-gold: #e8b84b;        /* marquee bulb gold - primary accent */
+  --color-gold-soft: #f3d98a;   /* lighter gold for hover states */
+  --color-crimson: #c2313a;     /* velvet curtain red - secondary accent */
+  --color-text: #f2f0e9;        /* warm off-white text */
+  --color-text-muted: #a8a6ad;  /* secondary text */
+  --color-border: #2f2f3a;
+
+  /* Typography */
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Layout */
+  --radius-card: 10px;
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  /* Subtle radial glow to suggest stage lighting */
+  background-image: radial-gradient(circle at 50% 0%, rgba(232, 184, 75, 0.08), transparent 60%);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
